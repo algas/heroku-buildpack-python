@@ -4,7 +4,7 @@ puts-step "Installing dependencies with pip"
 echo $PKG_CONFIG_PATH
 export PKG_CONFIG_PATH=/app/.heroku/vendor/lib/pkgconfig:$BUILD_DIR/.heroku/vendor/lib/pkgconfig:/app/.heroku/python/lib/pkgconfig
 echo $PKG_CONFIG_PATH
-echo `ls $BUILD_DIR/.heroku/vendor/lib/pkgconfig`
+echo `ls $BUILD_DIR/.heroku/vendor/lib/pkgconfig/*`
 
 [ ! "$FRESH_PYTHON" ] && bpwatch start pip_install
 [ "$FRESH_PYTHON" ] && bpwatch start pip_install_first
